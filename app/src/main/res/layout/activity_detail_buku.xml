@@ -5,7 +5,6 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/BackgroundWarmPaper"
     tools:context=".DetailBukuActivity">
 
     <com.google.android.material.appbar.AppBarLayout
@@ -16,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            android:background="@color/PrimaryForest"
+            android:background="#0B192C"
             app:titleTextColor="@color/White"
             app:layout_scrollFlags="scroll|enterAlways"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -25,69 +24,163 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="#FDFBF7"
         app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:padding="16dp">
+            android:padding="24dp">
 
-            <ImageView
-                android:layout_width="150dp"
-                android:layout_height="200dp"
-                android:layout_gravity="center"
-                android:src="@drawable/ic_library_logo"
-                android:background="@color/White"
-                android:layout_marginBottom="16dp" />
+            <!-- Cover -->
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvCover"
+                android:layout_width="140dp"
+                android:layout_height="210dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="8dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
 
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:scaleType="centerCrop"
+                    android:src="@drawable/logo"
+                    android:contentDescription="@null" />
+            </com.google.android.material.card.MaterialCardView>
+
+            <!-- Title -->
             <TextView
-                android:layout_width="wrap_content"
+                android:id="@+id/tvDetailTitle"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:fontFamily="serif"
                 android:text="Bumi Manusia"
-                android:textSize="24sp"
+                android:textAlignment="center"
+                android:textColor="#0B192C"
+                android:textSize="26sp"
                 android:textStyle="bold"
-                android:textColor="@color/PrimaryNavy" />
+                tools:ignore="HardcodedText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/cvCover" />
 
+            <!-- Author -->
             <TextView
+                android:id="@+id/tvDetailAuthor"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="P. A. Toer"
+                android:textAlignment="center"
+                android:textColor="#0B192C"
+                android:textSize="16sp"
+                tools:ignore="HardcodedText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDetailTitle" />
+
+            <!-- Info Row -->
+            <LinearLayout
+                android:id="@+id/llInfoRow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Pramoedya Ananta Toer"
-                android:textSize="18sp"
-                android:layout_marginTop="4dp"
-                android:textColor="@color/TextPrimary" />
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
                 android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp">
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvDetailAuthor">
 
+                <!-- Rating uses Amber #F59E0B for design; ignore lint warning -->
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="⭐ 4.9"
-                    android:textColor="@color/AccentAmber"
+                    android:text="★ 4.9"
+                    android:textColor="#F59E0B"
+                    android:textSize="14sp"
                     android:textStyle="bold"
-                    android:layout_marginEnd="16dp" />
+                    tools:ignore="HardcodedText,VisualLintInsufficientTextContrastRatio" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:background="#94A3B8" />
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="📍 Rak Sastra A-04"
-                    android:textColor="@color/AccentEmerald"
-                    android:textStyle="bold" />
+                    android:text="Rak Sastra A-04"
+                    android:textColor="#0B192C"
+                    android:textSize="14sp"
+                    tools:ignore="HardcodedText" />
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="4dp"
+                    android:layout_marginHorizontal="12dp"
+                    android:background="#94A3B8" />
+
+                <!-- Badge -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/bg_badge_green"
+                    android:paddingHorizontal="10dp"
+                    android:paddingVertical="4dp"
+                    android:text="Tersedia"
+                    android:textColor="#1B4332"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,VisualLintInsufficientTextContrastRatio" />
             </LinearLayout>
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:lineSpacingExtra="4dp"
-                android:textColor="@color/TextPrimary"
-                android:text="Bumi Manusia adalah buku pertama dari Tetralogi Buru karya Pramoedya Ananta Toer.\n\n(Scroll untuk melihat efek toolbar)...\n\nNovel ini ditulis Pramoedya Ananta Toer ketika masih mendekam di Pulau Buru. Novel ini mengisahkan tentang Minke, salah satu anak bupati yang bisa bersekolah di HBS. Pada masa itu, yang dapat masuk ke sekolah HBS adalah orang-orang keturunan Eropa.\n\nMinke adalah seorang pribumi yang pandai menulis. Tulisan-tulisannya sering dimuat di Koran-koran Belanda dengan nama samaran Max Tollenaar. Suatu hari Minke diajak temannya Robert Suurhof untuk pergi ke Wonokromo. Di sana dia bertemu dengan Annelies Mellema dan ibunya, Nyai Ontosoroh. Sejak saat itu, Minke sering berkunjung ke Wonokromo dan semakin dekat dengan Annelies maupun Nyai Ontosoroh.\n\nKedekatan Minke dengan keluarga Nyai Ontosoroh menimbulkan banyak pertentangan. Ayah Minke menentang keras hubungan anaknya dengan seorang Nyai. Pada saat itu, Nyai dianggap sebagai perempuan tidak benar karena tinggal serumah dengan laki-laki tanpa ikatan pernikahan.\n\nNamun Minke mengagumi pemikiran-pemikiran Nyai Ontosoroh. Bagi Minke, Nyai Ontosoroh adalah wanita yang luar biasa. Ia adalah wanita mandiri yang cerdas dan berani melawan penindasan. Bersama Nyai Ontosoroh, Minke belajar banyak hal tentang kehidupan dan perjuangan melawan ketidakadilan.\n\nKisah cinta Minke dan Annelies juga tidak berjalan mulus. Mereka harus menghadapi berbagai rintangan, termasuk dari keluarga Mellema sendiri. Robert Mellema, kakak Annelies, sangat membenci Minke dan ibunya. Ia sering membuat kekacauan di rumah Wonokromo.\n\nBumi Manusia bukan sekadar kisah cinta, melainkan sebuah epik sejarah yang menggambarkan kebangkitan kesadaran nasional di Hindia Belanda. Novel ini menyoroti diskriminasi rasial, penindasan kolonial, dan perjuangan kelas di masa itu.\n\n(Akhir dari sinopsis)" />
+            <!-- Divider -->
+            <View
+                android:id="@+id/divider"
+                android:layout_width="0dp"
+                android:layout_height="1dp"
+                android:layout_marginTop="24dp"
+                android:background="#CBD5E1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/llInfoRow" />
 
-        </LinearLayout>
+            <!-- Synopsis Title -->
+            <TextView
+                android:id="@+id/tvSynopsisTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Sinopsis"
+                android:textColor="#0B192C"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:ignore="HardcodedText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/divider" />
+
+            <!-- Synopsis Text -->
+            <TextView
+                android:id="@+id/tvSynopsis"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="12dp"
+                android:lineSpacingExtra="6dp"
+                android:text="Bumi Manusia adalah buku pertama dari Tetralogi Buru\nkarya Pramoedya Ananta Toer.\n\n(Scroll untuk melihat efek toolbar)...\n\nNovel ini ditulis Pramoedya Ananta Toer ketika\nmasih mendekam di Pulau Buru. Novel ini mengisahkan\ntentang Minke, salah satu anak bupati yang bisa\nbersekolah di HBS. Pada masa itu, yang dapat masuk\nke sekolah HBS adalah orang-orang keturunan Eropa.\n\nMinke adalah seorang pribumi yang pandai menulis.\nTulisan-tulisannya sering dimuat di Koran-koran Belanda\ndengan nama samaran Max Tollenaar. Suatu hari Minke\ndiajak temannya Robert Suurhof untuk pergi ke Wonokromo.\nDi sana dia bertemu dengan Annelies Mellema dan ibunya,\nNyai Ontosoroh. Sejak saat itu, Minke sering berkunjung\nke Wonokromo dan semakin dekat dengan Annelies\nmaupun Nyai Ontosoroh.\n\nKedekatan Minke dengan keluarga Nyai Ontosoroh\nmenimbulkan banyak pertentangan. Ayah Minke menentang\nkeras hubungan anaknya dengan seorang Nyai. Pada saat\nitu, Nyai dianggap sebagai perempuan tidak benar karena\ntinggal serumah dengan laki-laki tanpa ikatan pernikahan.\n\nNamun Minke mengagumi pemikiran-pemikiran Nyai\nOntosoroh. Bagi Minke, Nyai Ontosoroh adalah wanita\nyang luar biasa. Ia adalah wanita mandiri yang cerdas\ndan berani melawan penindasan. Bersama Nyai Ontosoroh,\nMinke belajar banyak hal tentang kehidupan dan\nperjuangan melawan ketidakadilan.\n\nKisah cinta Minke dan Annelies juga tidak berjalan\nmulus. Mereka harus menghadapi berbagai rintangan,\ntermasuk dari keluarga Mellema sendiri. Robert Mellema,\nkakak Annelies, sangat membenci Minke dan ibunya. Ia\nsering membuat kekacauan di rumah Wonokromo.\n\nBumi Manusia bukan sekadar kisah cinta, melainkan\nsebuah epik sejarah yang menggambarkan kebangkitan\nkesadaran nasional di Hindia Belanda. Novel ini menyoroti\ndiskriminasi rasial, penindasan kolonial, dan perjuangan\nkelas di masa itu.\n\n(Akhir dari sinopsis)"
+                android:textColor="#0B192C"
+                android:textSize="15sp"
+                tools:ignore="HardcodedText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/tvSynopsisTitle" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

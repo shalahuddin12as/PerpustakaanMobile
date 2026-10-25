@@ -5,45 +5,99 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/BackgroundWarmPaper"
+    android:background="#FDFBF7"
     tools:context=".SplashScreenActivity">
 
-    <ImageView
-        android:id="@+id/ivLogo"
+    <!-- Center Branding Chain -->
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/cvLogo"
         android:layout_width="120dp"
         android:layout_height="120dp"
-        android:src="@drawable/ic_library_logo"
-        app:layout_constraintBottom_toTopOf="@+id/tvAppTitle"
+        app:cardCornerRadius="36dp"
+        app:cardElevation="0dp"
+        app:layout_constraintVertical_chainStyle="packed"
+        app:layout_constraintVertical_bias="0.4"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_chainStyle="packed"
-        android:layout_marginBottom="16dp" />
+        app:layout_constraintBottom_toTopOf="@+id/tvAppName">
+
+        <ImageView
+            android:id="@+id/ivLogo"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop"
+            android:src="@drawable/logo"
+            android:contentDescription="@null" />
+    </com.google.android.material.card.MaterialCardView>
 
     <TextView
-        android:id="@+id/tvAppTitle"
+        android:id="@+id/tvAppName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="18dp"
+        android:fontFamily="serif"
         android:text="Perpustakaan Mobile"
-        android:textColor="@color/PrimaryNavy"
-        android:textSize="24sp"
+        android:textColor="#0B192C"
+        android:textSize="26sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/tvAppVersion"
+        tools:ignore="HardcodedText"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ivLogo"
-        android:layout_marginBottom="8dp" />
+        app:layout_constraintTop_toBottomOf="@+id/cvLogo"
+        app:layout_constraintBottom_toTopOf="@+id/tvSubtitle" />
 
     <TextView
-        android:id="@+id/tvAppVersion"
+        android:id="@+id/tvSubtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Versi 1.0"
-        android:textColor="@color/TextPrimary"
+        android:layout_marginTop="6dp"
+        android:text="Literasi Digital &amp; Akses Pintar"
+        android:textColor="#334155"
         android:textSize="14sp"
+        tools:ignore="HardcodedText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvAppName"
+        app:layout_constraintBottom_toTopOf="@+id/progressBar" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:layout_marginTop="28dp"
+        android:indeterminateTint="#1B4332"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvSubtitle"
+        app:layout_constraintBottom_toTopOf="@+id/tvVersion" />
+
+    <!-- Footer -->
+    <TextView
+        android:id="@+id/tvVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:text="Versi 1.0"
+        android:textColor="#1F2937"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        tools:ignore="HardcodedText"
+        app:layout_constraintBottom_toTopOf="@+id/tvCopyright"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/tvCopyright"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="24dp"
+        android:text="Sistem Sirkulasi Daerah © 2026"
+        android:textColor="#334155"
+        android:textSize="11sp"
+        tools:ignore="HardcodedText"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvAppTitle" />
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
     android:background="@color/BackgroundWarmPaper"
     tools:context=".MainActivity">
 
     <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
@@ -24,46 +25,108 @@
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
     </com.google.android.material.appbar.AppBarLayout>
 
+    <FrameLayout
+        android:id="@+id/fragment_container"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/appBarLayout"
+        android:layout_above="@id/bottomNavWrapper" />
+
     <LinearLayout
+        android:id="@+id/bottomNavWrapper"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:orientation="horizontal"
-        android:weightSum="3"
-        android:padding="8dp">
+        android:weightSum="5"
+        android:background="#FFFFFF"
+        android:elevation="16dp"
+        android:paddingTop="8dp"
+        android:paddingBottom="8dp">
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnBeranda"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Beranda"
-            android:layout_marginEnd="4dp"
-            app:backgroundTint="@color/PrimaryNavy"/>
+            android:textSize="12sp"
+            app:icon="@android:drawable/ic_menu_compass"
+            app:iconGravity="top"
+            app:iconTint="#1B4332"
+            android:textColor="#1B4332"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            tools:ignore="HardcodedText" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnKatalog"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Katalog"
-            android:layout_marginHorizontal="4dp"
-            app:backgroundTint="@color/PrimaryNavy"/>
+            android:text="Kategori"
+            android:textSize="12sp"
+            app:icon="@android:drawable/ic_menu_sort_by_size"
+            app:iconGravity="top"
+            app:iconTint="#1B4332"
+            android:textColor="#1B4332"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            tools:ignore="HardcodedText" />
 
         <com.google.android.material.button.MaterialButton
             android:id="@+id/btnKoleksi"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="Koleksi"
-            android:layout_marginStart="4dp"
-            app:backgroundTint="@color/PrimaryNavy"/>
+            android:textSize="12sp"
+            app:icon="@android:drawable/ic_menu_agenda"
+            app:iconGravity="top"
+            app:iconTint="#1B4332"
+            android:textColor="#1B4332"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            tools:ignore="HardcodedText" />
 
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnNotifikasi"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Notifikasi"
+            android:textSize="12sp"
+            app:icon="@android:drawable/ic_popup_reminder"
+            app:iconGravity="top"
+            app:iconTint="#334155"
+            android:textColor="#334155"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            tools:ignore="HardcodedText" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnAkun"
+            style="@style/Widget.MaterialComponents.Button.TextButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Akun"
+            android:textSize="12sp"
+            app:icon="@android:drawable/ic_menu_myplaces"
+            app:iconGravity="top"
+            app:iconTint="#334155"
+            android:textColor="#334155"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:padding="0dp"
+            tools:ignore="HardcodedText" />
     </LinearLayout>
-
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1" />
-
-</LinearLayout>
+</RelativeLayout>
