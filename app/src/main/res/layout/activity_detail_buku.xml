@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/BackgroundWarmPaper"
+    tools:context=".DetailBukuActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="@color/PrimaryForest"
+            app:titleTextColor="@color/White"
+            app:layout_scrollFlags="scroll|enterAlways"
+            app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_library_logo"
+                android:background="@color/White"
+                android:layout_marginBottom="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Bumi Manusia"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@color/PrimaryNavy" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Pramoedya Ananta Toer"
+                android:textSize="18sp"
+                android:layout_marginTop="4dp"
+                android:textColor="@color/TextPrimary" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="⭐ 4.9"
+                    android:textColor="@color/AccentAmber"
+                    android:textStyle="bold"
+                    android:layout_marginEnd="16dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="📍 Rak Sastra A-04"
+                    android:textColor="@color/AccentEmerald"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:lineSpacingExtra="4dp"
+                android:textColor="@color/TextPrimary"
+                android:text="Bumi Manusia adalah buku pertama dari Tetralogi Buru karya Pramoedya Ananta Toer.\n\n(Scroll untuk melihat efek toolbar)...\n\nNovel ini ditulis Pramoedya Ananta Toer ketika masih mendekam di Pulau Buru. Novel ini mengisahkan tentang Minke, salah satu anak bupati yang bisa bersekolah di HBS. Pada masa itu, yang dapat masuk ke sekolah HBS adalah orang-orang keturunan Eropa.\n\nMinke adalah seorang pribumi yang pandai menulis. Tulisan-tulisannya sering dimuat di Koran-koran Belanda dengan nama samaran Max Tollenaar. Suatu hari Minke diajak temannya Robert Suurhof untuk pergi ke Wonokromo. Di sana dia bertemu dengan Annelies Mellema dan ibunya, Nyai Ontosoroh. Sejak saat itu, Minke sering berkunjung ke Wonokromo dan semakin dekat dengan Annelies maupun Nyai Ontosoroh.\n\nKedekatan Minke dengan keluarga Nyai Ontosoroh menimbulkan banyak pertentangan. Ayah Minke menentang keras hubungan anaknya dengan seorang Nyai. Pada saat itu, Nyai dianggap sebagai perempuan tidak benar karena tinggal serumah dengan laki-laki tanpa ikatan pernikahan.\n\nNamun Minke mengagumi pemikiran-pemikiran Nyai Ontosoroh. Bagi Minke, Nyai Ontosoroh adalah wanita yang luar biasa. Ia adalah wanita mandiri yang cerdas dan berani melawan penindasan. Bersama Nyai Ontosoroh, Minke belajar banyak hal tentang kehidupan dan perjuangan melawan ketidakadilan.\n\nKisah cinta Minke dan Annelies juga tidak berjalan mulus. Mereka harus menghadapi berbagai rintangan, termasuk dari keluarga Mellema sendiri. Robert Mellema, kakak Annelies, sangat membenci Minke dan ibunya. Ia sering membuat kekacauan di rumah Wonokromo.\n\nBumi Manusia bukan sekadar kisah cinta, melainkan sebuah epik sejarah yang menggambarkan kebangkitan kesadaran nasional di Hindia Belanda. Novel ini menyoroti diskriminasi rasial, penindasan kolonial, dan perjuangan kelas di masa itu.\n\n(Akhir dari sinopsis)" />
+
+        </LinearLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
